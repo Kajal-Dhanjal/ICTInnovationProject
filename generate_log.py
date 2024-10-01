@@ -34,9 +34,13 @@ def generate_log_file(file_name, num_entries=100):
             log_entry = generate_auth_log_entry()
             log_file.write(log_entry + "\n")
 
-# Generate 100 log entries and save them to a file
-generate_log_file("simulated_auth_logs.txt", 100)
+# Ask user for the number of log entries to generate
+num = int(input("How many log entries would you like to generate? "))
 
-print_log  = [generate_auth_log_entry() for _ in range(100)]
+# Generate log entries and save them to a file
+generate_log_file("simulated_auth_logs.txt", num)
+
+# Generate and print the specified number of log entries
+print_log = [generate_auth_log_entry() for _ in range(num)]
 for entry in print_log:
     print(entry)
