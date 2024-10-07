@@ -634,11 +634,7 @@ def Time_Adjustment(): # frunction for randomizing time for brute force attack
     new_month = time.month
     new_year = time.year
     new_second=time.second
-    if(random.randint(1,2)==1):
-        new_minute=new_minute+1
-        new_second=new_second+random.randint(5,15)
-    else:
-        new_second=new_second+random.randint(5,15)
+    new_second=new_second+random.randint(5,15)
     # check seconds for overflow
     if new_second >= 60:
         new_second=new_second%60
