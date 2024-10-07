@@ -630,13 +630,7 @@ def Time_Adjustment(): # frunction for randomizing time for brute force attack
     global time
     time+=timedelta(seconds=random.randint(1,30))
     return time 
-
-
-
-
-
-
-
+    
 def start():
     print("please select a option to view log files. Enter 1 for authentication logs ad 2 for firewall log types and 3 to quit")
     option=int(input())
