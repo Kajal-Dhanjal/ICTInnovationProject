@@ -628,56 +628,8 @@ class Randomization: #using class for stroing detils for brute froce attack
         self.user=user
 def Time_Adjustment(): # frunction for randomizing time for brute force attack
     global time
-    new_minute = time.minute
-    new_hour = time.hour
-    new_day = time.day
-    new_month = time.month
-    new_year = time.year
-    new_second=time.second
-    new_second=new_second+random.randint(5,15)
-    # check seconds for overflow
-    if new_second >= 60:
-        new_second=new_second%60
-        new_minute+=1
-    # Check for minute overflow
-    if new_minute == 60:
-        new_minute = 0
-        new_second=random.randint(1,60)
-        new_hour += 1  # Increment hour
-        
-        # Check for hour overflow
-        if new_hour == 24:
-            new_hour = 0
-            new_day += 1  # Increment day
-            
-            # Check for day overflow
-            if new_day > 31:  # Simplified check for overflow
-                # Adjust for months with different days, and leap years if necessary
-                if new_month in [1, 3, 5, 7, 8, 10]:  # Months with 31 days
-                    if new_day > 31:
-                        new_day = 1
-                        new_month += 1
-                elif new_month in [4, 6, 9, 11]:  # Months with 30 days
-                    if new_day > 30:
-                        new_day = 1
-                        new_month += 1
-                elif new_month == 2:  # February
-                    # Check for leap year
-                    if (new_year % 4 == 0 and new_year % 100 != 0) or (new_year % 400 == 0):
-                        if new_day > 29:
-                            new_day = 1
-                            new_month += 1
-                    else:
-                        if new_day > 28:
-                            new_day = 1
-                            new_month += 1
-                if new_month > 12:  # Year overflow
-                    new_month = 1
-                    new_year += 1
-
-    # Creating a new datetime object with the calculated values
-    new_time = time.replace(year=new_year, month=new_month, day=new_day, hour=new_hour, minute=new_minute, second=new_second)
-    return new_time
+    time+=timedelta(seconds=random.randint(1,30))
+    return time 
 
 
 
