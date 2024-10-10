@@ -226,9 +226,11 @@ def generate_log_file(file_name, num_entries=100):
             log_file.write(log_entry + "\n")
 
 def DDOS_Attack_Logs():
-    # Run the main function
-    if __name__ == "__main__":
-        main_function()
+   # Run the main function
+ if __name__ == "__main__":
+    main_Function()
+import random
+from datetime import datetime
 
 # Function to generate log entry
 def generate_log_entry(timestamp, src_ip, dst_ip, length, tos, ttl, packet_id, proto, src_port, dst_port, window, res, flags, action, log_type, color=None):
@@ -242,9 +244,11 @@ def generate_log_entry(timestamp, src_ip, dst_ip, length, tos, ttl, packet_id, p
                     f"SRC={src_ip} DST={dst_ip} LEN={length} TOS={tos} PREC=0x00 TTL={ttl} ID={packet_id} " \
                     f"PROTO={proto} SPT={src_port} DPT={dst_port} WINDOW={window} RES={res} {flags} URGP=0  # {log_type}"
     return log_entry
+
 # Function to generate timestamp
 def generate_timestamp():
     return datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3]
+
 # Function to generate SYN flood logs
 def generate_syn_flood_logs(num_entries, packet_size):
     syn_flood_logs = []
@@ -266,6 +270,7 @@ def generate_syn_flood_logs(num_entries, packet_size):
         log_entry = generate_log_entry(timestamp, src_ip, dst_ip, packet_size, tos, ttl, packet_id, proto, src_port, dst_port, window, res, flags, action, "SYN FLOOD ATTACK")
         syn_flood_logs.append(log_entry)
     return syn_flood_logs
+
 # Function to generate normal TCP logs
 def generate_normal_tcp_logs(num_entries):
     normal_tcp_logs = []
@@ -297,6 +302,7 @@ def generate_normal_tcp_logs(num_entries):
         normal_tcp_logs.append(log_entry_ack)
 
     return normal_tcp_logs
+
 # Function to generate HTTP flood logs
 def generate_http_flood_logs(num_entries, packet_size):
     http_flood_logs = []
@@ -318,6 +324,7 @@ def generate_http_flood_logs(num_entries, packet_size):
         log_entry = generate_log_entry(timestamp, src_ip, dst_ip, packet_size, tos, ttl, packet_id, proto, src_port, dst_port, window, res, flags, action, "HTTP FLOOD ATTACK")
         http_flood_logs.append(log_entry)
     return http_flood_logs
+
 # Function to generate normal HTTP logs
 def generate_normal_http_logs(num_entries):
     normal_http_logs = []
@@ -364,6 +371,7 @@ def generate_normal_http_logs(num_entries):
         normal_http_logs.append(log_entry_fin)
 
     return normal_http_logs
+
 # Function to write logs to text file
 def write_logs_to_txt_file(filename, logs):
     with open(filename, 'w') as file:
@@ -381,7 +389,7 @@ def write_logs_to_html_file(filename, logs, attack_type):
         file.write('</body></html>')
 
 # Main function
-def main_function():
+def main_Function():
     # Ask user for attack type and file type
     attack_type = input("Select attack type (syn flood/http flood): ").strip().lower()
     file_type = input("Select file type (text/html): ").strip().lower()
