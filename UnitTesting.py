@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch, mock_open
 from datetime import datetime, timedelta
-from IT_Logs import Time_Adjustment, successful_log_events, successful_disconnection_log_Events, failed_brute_force_attack, Randomization, generate_auth_log_entry, generate_log_file, generate_logs, generate_log, main, generate_event_id, generate_timestamp,normal_log, exfil_log, print_log, main_Function, main_func, write_logs_to_html_file,  write_logs_to_txt_file, generate_normal_http_logs,generate_http_flood_logs,generate_normal_tcp_logs,generate_syn_flood_logs,generate_log_entry, generate_firewall_log_entry
+from Integrated_logs import Time_Adjustment, successful_log_events, successful_disconnection_log_Events, failed_brute_force_attack, Randomization, generate_auth_log_entry, generate_log_file, generate_logs, generate_log, main, generate_event_id, generate_timestamp,normal_log, exfil_log, print_log, main_Function, main_func, write_logs_to_html_file,  write_logs_to_txt_file, generate_normal_http_logs,generate_http_flood_logs,generate_normal_tcp_logs,generate_syn_flood_logs,generate_log_entry, generate_firewall_log_entry
 import re
 import random
 
