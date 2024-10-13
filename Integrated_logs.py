@@ -659,5 +659,5 @@ def start():
             print("please select a option to view log files. Enter 1 for authentication logs ad 2 for firewall log types and 3 to quit")
             option=int(input())
     
-
-start()
+if __name__== "__main__":
+    start()
