@@ -11,7 +11,7 @@ def normal_log():
     time_increment = timedelta(seconds=random.uniform(0.5,3))
     base_time += time_increment
     des_ip = f"192.168.{random.randint(250, 250)}.{random.randint(166, 168)}"
-    sr_ip = f"192.168.{random.randint(0, 255)}.{random.randint(0, 255)}"
+    sr_ip = f"192.168.{random.randint(202, 202)}.{random.randint(137, 137)}"
     proto = random.choice(["TCP"])
     sour_port = random.randint(1024, 65535)
     destin_port = 22
