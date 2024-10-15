@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 from datetime import datetime
-from integrated import (
+from integrated import (     
     generate_firewall_log_entry, 
     generate_syn_flood_logs, 
     generate_logs, 
@@ -9,7 +9,7 @@ from integrated import (
     failed_brute_force_attack, 
     attack_types
 )
-
+#ensure the integrated_logs.py file is imported instade of the integrated
 class TestMalwareDetectionFunctionality(unittest.TestCase):
     """Functional test for the malware detection function."""
 
